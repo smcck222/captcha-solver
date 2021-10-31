@@ -19,6 +19,33 @@ def get_symbol(index):
   return(captcha_symbols[index])
 
 def main():
+  parser = argparse.ArgumentParser()
+  parser.add_argument('--symbols', help='Symbols set', type=str)
+  parser.add_argument('--length', help='Length of captchas', type=int)
+  parser.add_argument('--tflite_model', help='trained model', type=str)
+  parser.add_argument('--captcha_dir', help='test set', type=str)
+  parser.add_argument('--output_file', help='where to write the output', type=str)
+  args = parser.parse_args()
+  
+  if args.symbols is None:
+    print("Please specify the symbol set")
+    exit(1)
+  
+  if args.length is None:
+    print("Please specify the captcha length")
+    exit(1)
+  
+  if args.tflite_model is None:
+    print("Please specify the tflite model")
+    exit(1)
+
+  if args.captcha_dir is None:
+        print("Please specify the directory for test images")
+        exit(1)
+
+  if args.output_file is None:
+        print("Please specify the output file")
+        exit(1)
   
   symbols_file = open(args.symbols, 'r')
   captcha_symbols = symbols_file.readline().strip()
