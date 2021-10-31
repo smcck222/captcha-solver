@@ -15,8 +15,6 @@ import argparse
 # RUN inside dir. 
 # python3 classify_rpi.py --symbols s3.txt --length 6 --tflite_model m5.tflite --captcha_dir test_data_p2 --output_file output_tflite_rpi_5.txt
 
-def get_symbol(index):
-  return(captcha_symbols[index])
 
 def main():
   parser = argparse.ArgumentParser()
@@ -82,7 +80,7 @@ def main():
       output_data = interpreter.get_tensor(output_details[i]['index'])
       results = np.squeeze(output_data)
       index = np.argmax(results)
-      captcha_at_index = get_symbol(index)
+      captcha_at_index = captcha_symbols[index]
       pred = pred + captcha_at_index
     
     truncated_pred = pred.replace('/', ':')
