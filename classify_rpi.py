@@ -89,7 +89,7 @@ def main():
     output_dict[x] = truncated_pred
     print('Classified ' + x + 'as: ' + output_dict[x])
 
-  with open(args.output, 'w') as output_file:
+  with open(args.output_file, 'w') as output_file:
     output_file.write("scherian"+"\n")
     for key in output_dict:
       output_file.write(key + "," + output_dict[key] + "\n")
