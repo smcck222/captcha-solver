@@ -58,7 +58,8 @@ def main():
   print("Classifying captchas with symbol set {" + captcha_symbols + "}")
   
   # Load the TFLite model and allocate tensors.
-  interpreter = tf.lite.Interpreter(model_path = args.tflite_model)
+  #interpreter = tf.lite.Interpreter(model_path = args.tflite_model)
+  interpreter = tflite(model_path = args.tflite_model)
   
   # Get input and output tensors.
   interpreter.allocate_tensors()
