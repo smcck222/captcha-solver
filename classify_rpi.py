@@ -73,7 +73,7 @@ def main():
     (c, h, w) = image.shape
     image = image.reshape([-1, c, h, w])
     
-    input_data = numpy.array(image, dtype=numpy.float32)
+    input_data = np.array(image, dtype=numpy.float32)
     interpreter.set_tensor(input_details[0]['index'], input_data)
     interpreter.invoke()
     
