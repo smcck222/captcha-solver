@@ -67,3 +67,7 @@ def main():
     output_file.write("scherian"+"\n")
     for key in output_dict:
       output_file.write(key + "," + output_dict[key] + "\n")
+
+if __name__ == '__main__':
+    main()
+
