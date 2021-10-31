@@ -6,7 +6,7 @@ import tflite_runtime.interpreter as tflite
 
 import os
 import cv2
-import numpy
+import numpy as np
 import string
 import random
 import argparse
